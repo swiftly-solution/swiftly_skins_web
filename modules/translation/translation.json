@@ -1,0 +1,69 @@
+{
+    "login": "Login using Steam",
+    "logout": "Logout",
+    "home": {
+        "title": "Home",
+        "change_agent": "Change Agent",
+        "change_skin": "Change Skin",
+        "change_musickit": "Change Music Kit",
+        "change_graffiti": "Change Graffiti"
+    },
+    "agents": {
+        "title": "Agents"
+    },
+    "musickits": {
+        "title": "Music Kits"
+    },
+    "graffiti": {
+        "title": "Graffiti"
+    },
+    "skins": {
+        "title": "Skins"
+    },
+    "setup": {
+        "index": "Setup",
+        "license": "License",
+        "license_accept": "I accept the license for this project",
+        "coresettings": {
+            "title": "Core Settings",
+            "hostname": "Database Hostname",
+            "username": "Database Username",
+            "password": "Database Password",
+            "port": "Database Post",
+            "database": "Database Name",
+            "steamapikey": "Steam API Key",
+            "success": "All the connections were tested and they work perfectly."
+        },
+        "seeding": {
+            "title": "Seeding",
+            "message": "The database has been succesfully seeded."
+        },
+        "firstlogin": {
+            "title": "First Login",
+            "message": "To continue you need to login with Steam."
+        },
+        "finalsetup": {
+            "title": "Final Setup",
+            "message": "This was the last step in Skins Web Setup.",
+            "button": "Finish setup"
+        }
+    },
+    "search": "Search...",
+    "filters": "Filters",
+    "grades": "Spec Grades",
+    "teams": "Teams",
+    "t": "Terrorists",
+    "ct": "Counter-Terrorists",
+    "both": "Both Teams",
+    "errors": {
+        "system_error": "An error has occured. Please try again later. You can see the error in Browser Console.",
+        "no_empty": "{field} needs to have a value.",
+        "is_string": "{field} needs to be a string.",
+        "is_positive_number": "{field} needs to be a positive number.",
+        "is_port": "{field} needs to be a port.",
+        "encountered": "The following error has been encountered: {error}"
+    },
+    "continue": "Continue",
+    "test_connection": "Test Connection",
+    "equipped": "Equipped"
+}
