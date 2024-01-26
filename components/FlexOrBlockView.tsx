@@ -10,7 +10,7 @@ const FlexOrBlockView = styled.div<Props>`
     ${(props) => `flex-direction: ${props.direction}`}
 
     @media (orientation: portrait) {
-        flex-direction: column;
+        flex-direction: row;
 
         & > div:not(:first-of-type) {
             margin-top: 1rem;

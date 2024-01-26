@@ -51,7 +51,9 @@
     "search": "Search...",
     "filters": "Filters",
     "grades": "Spec Grades",
+    "grade": "Spec Grade",
     "teams": "Teams",
+    "team": "Team",
     "t": "Terrorists",
     "ct": "Counter-Terrorists",
     "both": "Both Teams",
@@ -61,9 +63,22 @@
         "is_string": "{field} needs to be a string.",
         "is_positive_number": "{field} needs to be a positive number.",
         "is_port": "{field} needs to be a port.",
-        "encountered": "The following error has been encountered: {error}"
+        "is_number_between": "{field} needs to be a number between {min} and {max}.",
+        "encountered": "The following error has been encountered: {error}",
+        "invalid_request": "Invalid request."
     },
     "continue": "Continue",
     "test_connection": "Test Connection",
-    "equipped": "Equipped"
+    "equipped": "Equipped",
+    "equip": "Equip",
+    "unequip": "Unequip",
+    "seed": "Seed",
+    "wear": "Wear",
+    "battle_scared": "Battle Scared",
+    "well_worn": "Well Worn",
+    "field_tested": "Field Tested",
+    "minimal_wear": "Minimal Wear",
+    "factory_new": "Factory New",
+    "nametag": "Name Tag",
+    "updated": "Update has been succesfully executed."
 }

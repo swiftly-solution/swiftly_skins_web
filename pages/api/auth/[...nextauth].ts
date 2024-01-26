@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             },
             signIn({ user, account, profile, email, credentials }) {
                 // @ts-expect-error
-                db.execute("insert ignore into sw_skins_users (steamid, admin, unlockedSkins, equippedSkins) values (?, ?, ?, ?)", [profile.steamid, FetchSetupStep() == "firstlogin", "[]", "[]"])
+                db.execute("insert ignore into sw_skins_users (steamid, admin, equippedSkins, skinsdata) values (?, ?, ?, ?, ?)", [profile.steamid, FetchSetupStep() == "firstlogin", "[]", "{}"])
                 if (FetchSetupStep() == "firstlogin") SetSetupStep("finalsetup")
                 return true;
             },

@@ -11,6 +11,7 @@ interface Props {
     children: ReactNode;
     className?: string;
     link?: string;
+    onClick?: () => void;
 }
 
 const BaseElement = styled.div<Prop>`
@@ -23,9 +24,12 @@ const BaseElement = styled.div<Prop>`
 `;
 
 
-const Element = ({ color, link, className, children }: Props) => {
+const Element = ({ color, link, onClick, className, children }: Props) => {
     return (
-        <BaseElement onClick={() => link && Router.push(link)} color={color} className={`${className || ""} w-full h-min cursor-pointer rounded-3xl text-center ml-auto flex flex-col items-center content-center mr-auto p-2 shadow-lg hover:ring-[1px] ring-[#3D3D3D]`}>
+        <BaseElement onClick={() => {
+            if (link) Router.push(link);
+            else if (onClick) onClick();
+        }} color={color} className={`${className || ""} w-full h-min cursor-pointer rounded-3xl text-center ml-auto flex flex-col items-center content-center mr-auto p-2 shadow-lg hover:ring-[1px] ring-[#3D3D3D]`}>
             {children}
         </BaseElement>
     )

@@ -7,6 +7,7 @@ import SetSetupStep from "@/modules/setup/SetSetupStep";
 import { randomBytes } from "crypto";
 import { writeFileSync } from "fs";
 import { NextApiRequest, NextApiResponse } from "next";
+import { z } from 'zod';
 
 const nextsteps: Record<SetupStep, SetupStep> = {
     license: "coresettings",
@@ -17,6 +18,15 @@ const nextsteps: Record<SetupStep, SetupStep> = {
     finished: "finished"
 };
 
+const schema = z.object({
+    hostname: z.string(),
+    username: z.string(),
+    password: z.string(),
+    port: z.number().min(1024).max(65535),
+    database: z.string(),
+    steamApiKey: z.string()
+})
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method != "POST") return res.status(403).send("Unauthorized.");
 
@@ -25,6 +35,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (step == "license") SetSetupStep("coresettings");
     else if (step == "coresettings") {
+        if (!schema.safeParse(req.body).success) return res.status(200).json({ status: 403, message: "errors.invalid_request" });
+
         const { hostname, username, password, port, database, steamApiKey } = req.body;
 
         if (!hostname.length) return res.status(200).json({ status: 403, message: { main: "errors.no_empty", replace: { "{field}": "setup.coresettings.hostname" } } });

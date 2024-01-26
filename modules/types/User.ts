@@ -1,6 +1,10 @@
 export interface User {
     steamid: string;
     admin: boolean;
-    unlockedSkins: string[];
     equippedSkins: string[];
+    skinsdata: Record<string, {
+        nametag: string;
+        seed: number;
+        wear: number;
+    }>
 }
