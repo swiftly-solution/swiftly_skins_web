@@ -27,7 +27,7 @@
 The setup for the panel is straight-forward. Once it's installed on the webhost and running, if you enter for the first time on it the setup process will start and the webpage will ask you all the necessary things for it to run perfectly.
 
 ### Preview 👀
-![Preview1](https://media.discordapp.net/attachments/977518313217347604/1201099000795893790/image.png?ex=65c8959d&is=65b6209d&hm=97d031490d138b64b2ba0da3de4e382fe681c62eb81a5b9d941ba19bd782cf3c&=&format=webp&quality=lossless&width=1295&height=6710)
+![Preview1](https://media.discordapp.net/attachments/977518313217347604/1201098994982588477/image.png?ex=65c8959b&is=65b6209b&hm=dd595c7a680710913e0ffe75b4b080d704531e7374b52b145a2a3c053030faab&=&format=webp&quality=lossless&width=1293&height=671)
 ![Preview2](https://media.discordapp.net/attachments/977518313217347604/1201099000795893790/image.png?ex=65c8959d&is=65b6209d&hm=97d031490d138b64b2ba0da3de4e382fe681c62eb81a5b9d941ba19bd782cf3c&=&format=webp&quality=lossless&width=1295&height=671)
 ![Preview3](https://images-ext-1.discordapp.net/external/7S4cglxwz-mgrZI9_NPWhn8ZTERU3cGvhgrT-0fHCBA/https/cdn.skuzzi.ro/00irwn1ir509iugict7yy0xkpetnmthi.png?format=webp&quality=lossless&width=1440&height=633)
 
