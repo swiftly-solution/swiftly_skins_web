@@ -17,6 +17,10 @@
 
 ![Downloads](https://img.shields.io/github/downloads/swiftly-solution/swiftly_skins_web/total) ![Contributors](https://img.shields.io/github/contributors/swiftly-solution/swiftly_skins_web?color=dark-green) ![Issues](https://img.shields.io/github/issues/swiftly-solution/swiftly_skins_web) ![License](https://img.shields.io/github/license/swiftly-solution/swiftly_skins_web)
 
+> [!CAUTION]
+> This website is provided for a plugin which is not following the CS2 Server Guidelines. Use it at your own risk.
+> CS2 Server Guidelines: [Click](https://blog.counter-strike.net/index.php/server_guidelines/)
+
 ### Installation 👀
 
 1. Download the newest [release](https://github.com/swiftly-solution/swiftly_skins_web/releases).
