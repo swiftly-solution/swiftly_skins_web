@@ -25,9 +25,11 @@
 
 1. Download the newest [release](https://github.com/swiftly-solution/swiftly_skins_web/releases).
 2. Upload the files on webhost.
-3. Install the node modules using Yarn and NodeJS 20.x.
-4. Build the website using `yarn build` or `npm run build`.
-5. Start the website using Node Application option.
+3. Copy `.env.example` to `.env`.
+4. Change the URL in `.env` to the URL of your website.
+5. Install the node modules using Yarn and NodeJS 20.x.
+6. Build the website using `yarn build` or `npm run build`.
+7. Start the website using Node Application option.
 
 ### Setup
 
