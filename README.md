@@ -20,7 +20,9 @@
 ### Installation 👀
 
 1. Download the newest [release](https://github.com/swiftly-solution/swiftly_skins_web/releases).
-2. Upload the files on webhost and start the website using Node Application option.
+2. Upload the files on webhost.
+3. Install the node modules using Yarn and NodeJS 20.x.
+4. Start the website using Node Application option.
 
 ### Setup
 
