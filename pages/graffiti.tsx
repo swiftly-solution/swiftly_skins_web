@@ -21,7 +21,8 @@ export default function Graffiti() {
 
     return (
         <PageContentBlock title={t("graffiti.title")} loading={session.status == 'loading' || finished == false || (finished == true && response == false)}>
-            {error.length > 0 ? error : (session.status == 'unauthenticated' ? <NotLoggedIn /> : <SelectPage updateCB={setD} data={FetchGraffiti()} userData={userResponse.response || []} />)}
+            {/* {error.length > 0 ? error : (session.status == 'unauthenticated' ? <NotLoggedIn /> : <SelectPage updateCB={setD} data={FetchGraffiti()} userData={userResponse.response || []} />)} */}
+            This page is not functional.
         </PageContentBlock>
     )
 }
