@@ -50,7 +50,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             const skin = (id.includes("skin-") ? FetchSkinInfo : (id.includes("agent-") ? FetchAgentInfo : (id.includes("graffiti-") ? FetchGraffitiInfo : FetchMusicKitInfo)))(equippedSkin);
             if (!skin) continue;
             if (id.includes("skin-")) {
-                if ((skin as Skin).weapon == (newSkin as Skin).weapon) {
+                if ((skin as Skin).weapon == (newSkin as Skin).weapon || ((newSkin as Skin).defindex == "gloves" && (skin as Skin).defindex == "gloves") || (newSkin as Skin).weapon.includes("knife") && (skin as Skin).weapon.includes("knife")) {
                     user.equippedSkins = user.equippedSkins.filter((val) => val != skin.id);
                     delete user.skinsdata[skin.id];
                 }
