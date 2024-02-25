@@ -103,7 +103,7 @@ const SelectPage = ({ data, userData, updateCB }: Props) => {
                 onClose={() => { setShowModal(false); setSeed(1000); setWear(0.0); setNameTag(""); setSelectedData(undefined) }} center closeOnEsc={true} closeOnOverlayClick={true}>
                 {selectedData == undefined ? <HashLoader size={96} color={"#afafaf"} className="m-auto" /> : <>
                     <div className="w-[320px] flex flex-col gap-2 font-semibold items-center content-center text-center">
-                        <Image src={selectedData.image} alt={selectedData.image} width={144} height={144} />
+                        <img src={selectedData.image} alt={selectedData.image} width={144} height={144} />
                         <div className="mt-4">{t("grade")}: <span className="ml-2" style={{ color: selectedData.color }}>{selectedData.rarity}</span></div>
                         {!selectedData.team ? <></> : <div>{t("team")}: <span className="ml-2" style={{ color: (selectedData.team == "t" ? "#c26334" : "#3d74b8") }}>{t(selectedData.team)}</span></div>}
 
