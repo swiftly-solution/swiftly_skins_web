@@ -199,7 +199,7 @@ const SelectPage = ({ data, userData, updateCB }: Props) => {
                         {showData.map((value, index) => (
                             <Element key={value.id} onClick={() => { setSelectedData(value); setNameTag(value.name); setShowModal(true); }} className={`${userData.includes(value.id) ? "active" : ""}`} color={value.color}>
                                 <div className="mt-4 mb-4 select-none flex">
-                                    <Image src={value.image} alt={value.image} hidden={!imagesList.includes(value.image)} priority={true} width={144} height={144} onLoad={(e) => setImagesList((val) => [...val, value.image])} />
+                                    <img src={value.image} alt={value.image} hidden={!imagesList.includes(value.image)} width={144} height={144} onLoad={(e) => setImagesList((val) => [...val, value.image])} />
                                     {!imagesList.includes(value.image) && <HashLoader size={96} color={"#afafaf"} className="m-auto" />}
                                 </div>
                                 <span className="font-semibold text-md mb-2">{value.name} {userData.includes(value.id) ? `(${t("equipped")})` : ""}</span>

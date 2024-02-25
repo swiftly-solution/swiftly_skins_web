@@ -15,7 +15,7 @@ export default function Home() {
 	return (
 		<PageContentBlock title={t("home.title")} loading={session.status == 'loading' || finished == false || (finished == true && response == false)}>
 			{error.length > 0 ? error : (session.status == 'unauthenticated' ? <NotLoggedIn /> : <>
-				<GridOrBlockView gridtype={"column"} gridnumber={4} gapbetween={24} tocenter>
+				<GridOrBlockView gridtype={"column"} gridnumber={3} gapbetween={24} tocenter>
 					<ChangeElement link={"/skins"} title={t("home.change_skin")} color={"#eb4b4b"} icon={"/images/skins/weapon_bayonet_am_emerald_marbleized_light_png.png"} />
 					<ChangeElement link={"/agents"} title={t("home.change_agent")} color={"#d32ce6"} icon={"/images/agents/agent-4619.png"} />
 					{/* <ChangeElement link={"/graffiti"} title={t("home.change_graffiti")} color={"#8847ff"} icon={"/images/graffiti/graffiti-1664.png"} /> */}
