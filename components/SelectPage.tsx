@@ -57,7 +57,7 @@ const SelectPage = ({ data, userData, updateCB }: Props) => {
 
     const [showModal, setShowModal] = useState(false);
     const [selectedData, setSelectedData] = useState<any>(undefined);
-    const [seed, setSeed] = useState<number>(1000);
+    const [seed, setSeed] = useState<number>(1);
     const [wear, setWear] = useState<number>(0.0);
     const [nameTag, setNameTag] = useState<string>("");
 
@@ -100,7 +100,7 @@ const SelectPage = ({ data, userData, updateCB }: Props) => {
     return (
         <>
             <Modal open={showModal} styles={{ closeIcon: { fill: "#fff" }, modal: { background: "#1C1C1C", borderRadius: "1rem", padding: "4rem 6rem 1.5rem 6rem" } }}
-                onClose={() => { setShowModal(false); setSeed(1000); setWear(0.0); setNameTag(""); setSelectedData(undefined) }} center closeOnEsc={true} closeOnOverlayClick={true}>
+                onClose={() => { setShowModal(false); setSeed(1); setWear(0.0); setNameTag(""); setSelectedData(undefined) }} center closeOnEsc={true} closeOnOverlayClick={true}>
                 {selectedData == undefined ? <HashLoader size={96} color={"#afafaf"} className="m-auto" /> : <>
                     <div className="w-[320px] flex flex-col gap-2 font-semibold items-center content-center text-center">
                         <img src={selectedData.image} alt={selectedData.image} width={144} height={144} />
@@ -112,10 +112,10 @@ const SelectPage = ({ data, userData, updateCB }: Props) => {
                             <Input disabled={submitting} type={"text"} onChange={(e) => setNameTag(e.target.value)} defaultValue={selectedData.name} placeholder={selectedData.name} style={{ maxWidth: "unset", width: "100%", marginTop: ".5rem", marginBottom: ".5rem" }} />
 
                             <Label>{t("seed")} ({seed})</Label>
-                            <Input disabled={submitting} type={"number"} min={1000} max={999999999} value={seed} onChange={(e) => {
+                            <Input disabled={submitting} type={"number"} min={1} max={1000} value={seed} onChange={(e) => {
                                 const seedVal = Number(e.target.value);
-                                if (seedVal > 999999999) setSeed(999999999);
-                                else if (seedVal < 1000) setSeed(1000);
+                                if (seedVal > 1000) setSeed(1000);
+                                else if (seedVal < 1) setSeed(1);
                                 else setSeed(Number(e.target.value))
                             }} style={{ maxWidth: "unset", width: "100%", marginTop: ".5rem", marginBottom: ".5rem" }} />
 
@@ -148,7 +148,7 @@ const SelectPage = ({ data, userData, updateCB }: Props) => {
                         <Button disabled={submitting} className="mt-6" size={"large"} color={!userData.includes(selectedData.id) ? "green" : "red"} onClick={() => {
                             if (submitting) return;
 
-                            if (seed < 1000 || seed > 999999999) return ProcessNotification({ main: "errors.is_number_between", replace: { "{field}": "seed", "{min}": "1000", "{max}": "999999999" } }, ToastError);
+                            if (seed < 1 || seed > 1000) return ProcessNotification({ main: "errors.is_number_between", replace: { "{field}": "seed", "{min}": "1", "{max}": "999999999" } }, ToastError);
                             if (wear < 0.0 || wear > 1.0) return ProcessNotification({ main: "errors.is_number_between", replace: { "{field}": "float", "{min}": "0.0", "{max}": "1.0" } }, ToastError);
                             if (!nameTag.length) return ProcessNotification({ main: "errors.no_empty", replace: { "{field}": "nametag" } }, ToastError);
 

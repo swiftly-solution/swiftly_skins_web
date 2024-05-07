@@ -16,7 +16,7 @@ import { z } from 'zod';
 const schema = z.object({
     id: z.string(),
     nameTag: z.string(),
-    seed: z.number().min(1000).max(999999999),
+    seed: z.number().min(1).max(1000),
     wear: z.number().min(0.0).max(1.0),
 })
 
