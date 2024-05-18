@@ -10,7 +10,7 @@ import { useState } from "react";
 
 const SelectPage = dynamic(import("@/components/SelectPage"));
 
-export default function MusicKit() {
+export default function Pin() {
     const session = useSession();
     const [d, setD] = useState(Date.now());
 
