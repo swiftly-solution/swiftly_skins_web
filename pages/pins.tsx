@@ -17,10 +17,10 @@ export default function MusicKit() {
     const { response, finished, error } = ExecuteRequest<boolean>("/api/panelsetup/fetchfinished", "get");
     if (finished == true && response == false) Router.push("/setup");
 
-    const userResponse = ExecuteRequest<string[]>("/api/user/fetchUserData", "post", { category: "music_kit", authenticated: session.status == 'authenticated' }, d);
+    const userResponse = ExecuteRequest<string[]>("/api/user/fetchUserData", "post", { category: "pins", authenticated: session.status == 'authenticated' }, d);
 
     return (
-        <PageContentBlock title={t("musickits.title")} loading={session.status == 'loading' || finished == false || (finished == true && response == false)}>
+        <PageContentBlock title={t("pins.title")} loading={session.status == 'loading' || finished == false || (finished == true && response == false)}>
             {error.length > 0 ? error : (session.status == 'unauthenticated' ? <NotLoggedIn /> : <SelectPage updateCB={setD} data={FetchPins()} userData={userResponse.response || []} />)}
         </PageContentBlock>
     )
