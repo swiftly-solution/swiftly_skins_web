@@ -45,15 +45,12 @@ const Header = () => {
             });
 
             if (response.ok) {
-                console.log("Equipped skins cleared successfully");
                 ProcessNotification("Equipped skins cleared successfully", ToastSuccess);
             } else {
-                console.error("Failed to clear equipped skins");
                 ProcessNotification("Failed to clear equipped skins", ToastError);
             }
         } catch (error) {
             console.error("Error clearing equipped skins:", error);
-            ProcessNotification("Error clearing equipped skins", ToastError);
         } finally {
             setLoading(false);
         }
