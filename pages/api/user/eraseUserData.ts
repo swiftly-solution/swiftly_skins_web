@@ -1,5 +1,5 @@
 import { GetConfigValue } from "@/modules/config/config";
-import { fetchDB, db } from "@/modules/database/connection";  // Ensure you import db
+import { fetchDB, db } from "@/modules/database/connection";
 import IsSetupFinished from "@/modules/setup/IsSetupFinished";
 import { User } from "@/modules/types/User";
 import { NextApiRequest, NextApiResponse } from "next";
@@ -19,7 +19,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const users = await fetchDB<User[]>("select equippedSkins from sw_skins_users where steamid = ?", [steamid]);
     if (!users.length) return res.status(403).send("Unauthorized.");
 
-    // Update the equippedSkins to an empty array
     await db.execute("update sw_skins_users set equippedSkins = ? where steamid = ?", [JSON.stringify([]), steamid]);
     await db.execute("update sw_skins_users set skinsdata = ? where steamid = ?", [JSON.stringify({}), steamid]);
 
