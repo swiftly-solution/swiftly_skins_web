@@ -6,13 +6,17 @@
         "change_agent": "Change Agent",
         "change_skin": "Change Skin",
         "change_musickit": "Change Music Kit",
-        "change_graffiti": "Change Graffiti"
+        "change_graffiti": "Change Graffiti",
+        "change_pin": "Change Pins"
     },
     "agents": {
         "title": "Agents"
     },
     "musickits": {
         "title": "Music Kits"
+    },
+    "pins": {
+        "title": "Pins"
     },
     "graffiti": {
         "title": "Graffiti"

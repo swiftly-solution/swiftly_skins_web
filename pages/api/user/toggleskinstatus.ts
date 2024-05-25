@@ -3,6 +3,7 @@ import { GetConfigValue } from "@/modules/config/config";
 import { fetchDB } from "@/modules/database/connection";
 import FetchGraffitiInfo from "@/modules/graffiti/FetchGraffitiInfo";
 import FetchMusicKitInfo from "@/modules/musickits/FetchMusicKitInfo";
+import FetchPinsInfo from "@/modules/pins/FetchPinsInfo"
 import IsSetupFinished from "@/modules/setup/IsSetupFinished";
 import FetchSkinInfo from "@/modules/skins/FetchSkinInfo";
 import { Agent } from "@/modules/types/Agent";
@@ -16,7 +17,7 @@ import { z } from 'zod';
 const schema = z.object({
     id: z.string(),
     nameTag: z.string(),
-    seed: z.number().min(1).max(1000),
+    seed: z.number().min(1000).max(999999999),
     wear: z.number().min(0.0).max(1.0),
 })
 
@@ -42,12 +43,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (typeof user.equippedSkins == 'string') user.equippedSkins = JSON.parse(user.equippedSkins);
     if (typeof user.skinsdata == 'string') user.skinsdata = JSON.parse(user.skinsdata);
 
-    const newSkin = (id.includes("skin-") ? FetchSkinInfo : (id.includes("agent-") ? FetchAgentInfo : (id.includes("graffiti-") ? FetchGraffitiInfo : FetchMusicKitInfo)))(id);
+    const newSkin = (id.includes("skin-") ? FetchSkinInfo : id.includes("agent-") ? FetchAgentInfo : id.includes("graffiti-") ? FetchGraffitiInfo : id.includes("pin-") ? FetchPinsInfo : FetchMusicKitInfo)(id);
     if (!newSkin) return res.status(403).send("Unauthorized.");
 
     if (!user.equippedSkins.includes(newSkin.id)) {
         for (const equippedSkin of user.equippedSkins) {
-            const skin = (id.includes("skin-") ? FetchSkinInfo : (id.includes("agent-") ? FetchAgentInfo : (id.includes("graffiti-") ? FetchGraffitiInfo : FetchMusicKitInfo)))(equippedSkin);
+            const skin = (id.includes("skin-") ? FetchSkinInfo : id.includes("agent-") ? FetchAgentInfo : id.includes("graffiti-") ? FetchGraffitiInfo : id.includes("pin-") ? FetchPinsInfo : FetchMusicKitInfo)(equippedSkin);
+
             if (!skin) continue;
             if (id.includes("skin-")) {
                 if ((skin as Skin).weapon == (newSkin as Skin).weapon || ((newSkin as Skin).defindex == "gloves" && (skin as Skin).defindex == "gloves") || (newSkin as Skin).weapon.includes("knife") && (skin as Skin).weapon.includes("knife")) {
